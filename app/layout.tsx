@@ -12,7 +12,6 @@ export default function RootLayout({ children }: { children: JSX.Element }) {
         <RootStyleRegistry>
           <Container>
             <TopNav />
-
             {children}
           </Container>
         </RootStyleRegistry>

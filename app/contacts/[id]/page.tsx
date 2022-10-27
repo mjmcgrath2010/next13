@@ -1,19 +1,19 @@
 import axios from "axios";
-import React from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { cache } from "react";
 
 import Flex from "../../../components/Flex";
 import Image from "next/image";
 
 export interface ContactDetailProps {}
 
-const getContactDetail = async (id: string) => {
+const getContactDetail = cache(async (id: string) => {
   const contact = await axios.get(
     `https://6359cd1b38725a1746b7ccfa.mockapi.io/api/contacts/${id}`
   );
 
   return contact.data;
-};
+});
+
 const ContactDetail = async ({ params: { id } }: any) => {
   const contact = await getContactDetail(id);
   return (

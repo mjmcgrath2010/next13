@@ -2,11 +2,12 @@
 
 import useStyledComponentsRegistry from "../lib/styled-components";
 import { useServerInsertedHTML } from "next/navigation";
+import { ReactElement } from "react";
 
 export default function RootStyleRegistry({
   children,
 }: {
-  children: JSX.Element;
+  children: ReactElement;
 }) {
   const [StyledComponentsRegistry, styledComponentsFlushEffect] =
     useStyledComponentsRegistry();

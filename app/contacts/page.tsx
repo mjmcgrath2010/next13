@@ -4,6 +4,8 @@ import Flex from "../../components/Flex";
 import axios from "axios";
 import Image from "next/image";
 
+export const revalidate = 60;
+
 const asyncGetContacts = async () => {
   try {
     const contacts = await axios.get(

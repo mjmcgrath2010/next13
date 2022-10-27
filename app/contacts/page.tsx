@@ -19,8 +19,8 @@ const Contacts = async () => {
   return (
     <Flex gap={16}>
       <Flex flexDirection="row">
-        {contacts.map((contact: any) => (
-          <Link key={contact.id} href={`/contacts/${contact.id}`}>
+        {contacts.map((contact: any, idx: number) => (
+          <Link key={`${contact.id}-${idx}`} href={`/contacts/${contact.id}`}>
             <Image
               src={contact.avatar}
               alt={contact.name}

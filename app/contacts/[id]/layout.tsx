@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export interface ContactLayoutProps {
@@ -7,7 +8,7 @@ export interface ContactLayoutProps {
 const ContactLayout = ({ children }: ContactLayoutProps) => {
   return (
     <div>
-      <h3>Contact:</h3> {children}
+      <Link href="/contacts">⬅️ View All Contacts</Link> {children}
     </div>
   );
 };

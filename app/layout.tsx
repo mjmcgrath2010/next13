@@ -1,5 +1,6 @@
 import Container from "../components/Container";
 import TopNav from "../components/TopNav";
+import GlobalStyles from "./GlobalStyles";
 import RootStyleRegistry from "./RootStyleRegistry";
 
 export default function RootLayout({ children }: { children: JSX.Element }) {
@@ -11,6 +12,7 @@ export default function RootLayout({ children }: { children: JSX.Element }) {
       <body>
         <RootStyleRegistry>
           <Container>
+            <GlobalStyles />
             <TopNav />
             {children}
           </Container>

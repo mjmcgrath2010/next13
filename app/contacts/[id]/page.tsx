@@ -17,9 +17,13 @@ const getContactDetail = cache(async (id: string) => {
 const ContactDetail = async ({ params: { id } }: any) => {
   const contact = await getContactDetail(id);
   return (
-    <Flex>
-      <Image src={contact.avatar} alt={contact.name} width={100} height={100} />
-      <div>{contact.name}</div>
+    <Flex gap={16}>
+      <Image src={contact.avatar} alt={contact.name} width={400} height={400} />
+      <Flex flexDirection="column">
+        <h2>{contact.name}</h2>
+        <h3>{contact.company}</h3>
+        <h3>{contact.role}</h3>
+      </Flex>
     </Flex>
   );
 };

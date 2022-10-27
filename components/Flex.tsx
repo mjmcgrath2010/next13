@@ -12,6 +12,7 @@ export interface FlexProps {
   alignItems?: "center" | "flex-start" | "flex-end" | "stretch" | "baseline";
   flexDirection?: "row" | "row-reverse" | "column" | "column-reverse";
   gap?: number;
+  flexWrap?: "nowrap" | "wrap" | "wrap-reverse";
 }
 
 const Flex = styled.div<FlexProps>`
@@ -20,6 +21,7 @@ const Flex = styled.div<FlexProps>`
   flex-direction: ${({ flexDirection }) => flexDirection || "row"};
   display: flex;
   gap: ${({ gap }) => gap || 8}px;
+  flex-wrap: ${({ flexWrap }) => flexWrap || "wrap"};
 `;
 
 export default Flex;

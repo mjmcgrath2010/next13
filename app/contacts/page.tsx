@@ -1,14 +1,37 @@
 import Link from "next/link";
 import React from "react";
 import Flex from "../../components/Flex";
+import axios from "axios";
+import Image from "next/image";
 
-export interface ContactsProps {}
+const asyncGetContacts = async () => {
+  try {
+    const contacts = await axios.get(
+      "https://6359cd1b38725a1746b7ccfa.mockapi.io/api/contacts"
+    );
+    return contacts.data;
+  } catch (error) {}
+};
 
-const Contacts = () => {
+const Contacts = async () => {
+  const contacts = await asyncGetContacts();
+
   return (
     <Flex gap={16}>
-      <Link href="/contacts/create">Create Contact</Link>
-      <Link href="/contacts/1">Contact Detail</Link>
+      <Flex flexDirection="row">
+        {contacts.map((contact: any) => (
+          <Link key={contact.id} href={`/contacts/${contact.id}`}>
+            <Image
+              src={contact.avatar}
+              alt={contact.name}
+              width={100}
+              height={100}
+            />
+
+            <h6>{contact.name}</h6>
+          </Link>
+        ))}
+      </Flex>
     </Flex>
   );
 };

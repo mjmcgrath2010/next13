@@ -5,7 +5,7 @@ export interface ContactLayoutProps {
 }
 
 const ContactLayout = ({ children }: ContactLayoutProps) => {
-  return <div>Some Generic contact component {children}</div>;
+  return <div>Some Generic contact detail component {children}</div>;
 };
 
 export default ContactLayout;

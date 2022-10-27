@@ -77,6 +77,12 @@ const TopNav = () => {
             >
               About
             </NavItem>
+            <NavItem
+              active={pathname.indexOf("/contacts") === 0}
+              onClick={() => router.push("/contacts")}
+            >
+              Contacts (nested layout example)
+            </NavItem>
           </Nav>
         </ContentContainer>
       </Container>
